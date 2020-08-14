@@ -7,13 +7,19 @@ class stack{
     int tos;
     int data[MAX_SIZE];
     public:
-        void init();
+        stack();
+        ~stack();
         void push(int item);
         int pop();
 };
 
-void stack::init(){
+stack::stack(){
     tos=0;
+    cout<<"Stack is initialized"<<endl;
+}
+
+stack::~stack(){
+    cout<<"Stack Destroyed"<<endl;
 }
 
 void stack::push(int item){
@@ -38,13 +44,16 @@ int stack::pop(){
 }
 
 int main(){
-    stack stk;
+    stack stk1,stk2;
+    stk1.push(1);
+    stk1.push(2);
+    stk2.push(3);
+    stk2.push(4);
+    cout<<stk1.pop()<<endl;
+    cout<<stk1.pop()<<endl;
+    cout<<stk2.pop()<<endl;
+    cout<<stk2.pop()<<endl;
 
-    stk.init();
-    stk.push(1);
-    stk.push(2);
-    cout<<stk.pop();
-    cout<<stk.pop();
     return 0;
 }
 
